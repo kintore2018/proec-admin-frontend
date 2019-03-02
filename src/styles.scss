@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  font-family: YuGothic,
+  YuGothicM,
+  "游ゴシック Medium",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Helvetica Neue",
+  "Hiragino Kaku Gothic ProN",
+  メイリオ,
+  Meiryo,
+  sans-serif;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  text-align: justify;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}

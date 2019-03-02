@@ -1,0 +1,7 @@
+<ng-container *ngIf="trainers$ | async as trainers">
+  <ul>
+    <ng-container *ngFor="let trainer of trainers">
+      <proec-trainer [trainer]="trainer"></proec-trainer>
+    </ng-container> 
+  </ul>
+</ng-container>
