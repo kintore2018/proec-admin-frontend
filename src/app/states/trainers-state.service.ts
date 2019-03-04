@@ -18,8 +18,8 @@ export class TrainersState extends AbstractStateService<ITrainer[]> {
   }
 
   public fetchTrainers(): void {
-    this.trainersService.fetchTrainers().subscribe((trainers: ITrainer[]) => {
-      this.setValue(trainers);
+    this.trainersService.fetchTrainers().subscribe((trainers: any) => {
+      this.setValue(trainers.trainers);
     });
   }
 }

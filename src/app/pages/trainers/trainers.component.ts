@@ -10,7 +10,7 @@ import { ITrainer } from 'src/app/services/trainers.service';
 })
 export class TrainersComponent implements OnInit {
   public trainers$: Observable<ITrainer[]>;
-  private filterStr = '';
+  public filterKey = '';
 
   constructor(
     private trainersState: TrainersState
@@ -21,13 +21,14 @@ export class TrainersComponent implements OnInit {
     this.trainers$ = this.trainersState.$;
   }
 
-  public changeFilterStr(e): void {
-    this.filterStr = e.target.value;
+  public changeFilterKey(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    this.filterKey = target.value;
   }
 
   public filteredTrainers(trainers: ITrainer[]): ITrainer[] {
     return trainers.filter(trainer => {
-      const regExp = new RegExp(this.filterStr);
+      const regExp = new RegExp(this.filterKey);
       return (
         trainer.area.match(regExp)
         || trainer.trainerName.match(regExp)
