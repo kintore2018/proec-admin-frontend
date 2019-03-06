@@ -9,40 +9,9 @@ import { TrainersState } from './states/trainers-state.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(
-    // private trainerDetailState: TrainerDetailState,
-    // private trainersState: TrainersState
-  ) {
-
+  constructor() {
   }
 
   ngOnInit(): void {
-    // this.fetchTrainers();
   }
-
-  private fetchTrainers(): void {
-    // this.trainersState.fetchTrainers();
-  }
-
-  public updateTrainer(): void {
-    // this.trainerDetailState.updateTrainer(null);
-
-    // this.openLAP(1);
-  }
-
-  public deleteTrainer(): void {
-    // this.trainerService.deleteTrainers([1]).subscribe(res => {
-    //   console.log(res, 'delete!!!!');
-    // });
-    // console.log('delete');
-  }
-
-  public createTrainer(): void {
-    // this.openLAP(1);
-  }
-
-  private openLAP(id: number): void {
-    // console.log('open LAP');
-  }
-
 }
