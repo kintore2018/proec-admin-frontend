@@ -4,12 +4,12 @@
   display: inline-block;
   padding: $base-padding;
   border-radius: $border-radius;
-  border: 1px solid #DDDDDD;
   text-decoration: none;
   text-align: center;
   transition: all 0.3s;
   color: #8c8c8c;
   font-weight: bold;
+  background-color: #F9F9FA;
   cursor: pointer;
 
   &.is-primary {
