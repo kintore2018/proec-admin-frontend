@@ -8,13 +8,12 @@ import { AppComponent } from './app.component';
 import { TrainersComponent } from './pages/trainers/trainers.component';
 import { TrainerEditComponent } from './organisms/trainer-edit/trainer-edit.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MenuComponent } from './organisms/menu/menu.component';
 import { LogoComponent } from './atoms/logo/logo.component';
 import { InputComponent } from './atoms/input/input.component';
-import { FilterComponent } from './molcules/filter/filter.component';
 import { ButtonComponent } from './atoms/button/button.component';
 import { TrainerComponent } from './organisms/trainer/trainer.component';
 import { HttpApiInterceptor } from './interceptors/http-api.interceptor';
+import { NavComponent } from './molcules/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +21,11 @@ import { HttpApiInterceptor } from './interceptors/http-api.interceptor';
     TrainersComponent,
     TrainerEditComponent,
     LoginComponent,
-    MenuComponent,
     LogoComponent,
     InputComponent,
-    FilterComponent,
     ButtonComponent,
-    TrainerComponent
+    TrainerComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

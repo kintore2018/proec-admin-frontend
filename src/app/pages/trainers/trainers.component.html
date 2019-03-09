@@ -1,8 +1,17 @@
-<proec-filter (keyup)="changeFilterKey($event)"></proec-filter>
+<div class="action-container">
+  <proec-input
+    [type]="'text'"
+    [placeholder]="'キーワードで検索'"
+    (keyup)="changeFilterKey($event)"
+  ></proec-input>
+  <proec-button class="is-primary">新規作成</proec-button>
+</div>
 <ng-container *ngIf="trainers$ | async as trainers">
   <ul>
     <ng-container *ngFor="let trainer of filteredTrainers(trainers)">
-      <proec-trainer [trainer]="trainer"></proec-trainer>
+      <li>
+        <proec-trainer [trainer]="trainer"></proec-trainer>
+      </li>
     </ng-container> 
   </ul>
 </ng-container>

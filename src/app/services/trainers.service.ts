@@ -27,6 +27,10 @@ export interface ITrainer {
   trainerNameEn: string;
 }
 
+export interface ITrainersResponse {
+  trainers: ITrainer[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +42,7 @@ export class TrainersService extends AbstractApiService {
     super(http);
   }
 
-  fetchTrainers(): Observable<ITrainer[]> {
+  fetchTrainers(): Observable<ITrainersResponse> {
     return this.fetch(API_FETCHTRAINERS);
   }
 

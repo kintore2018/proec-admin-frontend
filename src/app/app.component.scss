@@ -1,0 +1,9 @@
+@import 'common';
+
+main {
+  position: relative;
+  left: 50px;
+  width: calc(100% - 100px);
+  padding: calc(#{$base-padding} * 3);
+  background-color: #F6F6F6;
+}

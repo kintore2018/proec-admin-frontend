@@ -1,0 +1,12 @@
+@import 'common';
+
+nav {
+  position: fixed;
+  z-index: 100;
+  width: 50px;
+  height: 100%;
+  padding-top: calc(#{$base-padding} * 3);
+  text-align: center;
+  background-color: #FFFFFF;
+  box-shadow: 4px 0px 10px rgba(201, 205, 220, 0.5);
+}
