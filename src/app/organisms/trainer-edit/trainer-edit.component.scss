@@ -1,0 +1,25 @@
+@import 'common';
+
+form {
+  padding: $base-padding;
+
+  label {
+    display: block;
+    color: #C9CDDC;
+    font-weight: bold;
+
+    & + label {
+      margin-top: 32px;
+    }
+  
+    input, textarea {
+      width: 95%;
+      margin-top: 4px;
+    }
+  
+    textarea {
+      resize: vertical;
+    }
+  }
+}
+

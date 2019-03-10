@@ -20,11 +20,13 @@ export interface ITrainer {
   hobby: string;
   imagePath: string;
   introduction: string;
+  membershipFee: string;
   reason: string;
   salesPoint: string;
   trainerId: number;
   trainerName: string;
   trainerNameEn: string;
+  trialFee: string;
 }
 
 export interface ITrainersResponse {

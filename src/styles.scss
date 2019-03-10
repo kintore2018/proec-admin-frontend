@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'common';
+
 html {
   height: 100%;
   font-size: 16px;
@@ -18,7 +19,14 @@ body {
   sans-serif;
   line-height: 1.8;
   letter-spacing: 1.5px;
-  text-align: justify;
   color: #333333;
   -webkit-font-smoothing: antialiased;
+}
+
+input, textarea {
+  padding: $base-padding;
+  border: none;
+  border-radius: $border-radius;
+  outline: none;
+  font-size: 16px;
 }

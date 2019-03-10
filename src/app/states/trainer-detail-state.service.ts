@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractStateService } from './abstract-state.service';
 import { ITrainer, TrainersService } from '../services/trainers.service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +23,8 @@ export class TrainerDetailState extends AbstractStateService<ITrainer> {
     });
   }
 
-  updateTrainer(param: ITrainer): void {
-    this.trainersService.updateTrainer(param).subscribe((trainer: ITrainer) => {
-      this.setValue(trainer);
-    });
+  updateTrainer(param: ITrainer): Observable<ITrainer> {
+    return this.trainersService.updateTrainer(param);
   }
 
   createTrainer(param: ITrainer): void {
