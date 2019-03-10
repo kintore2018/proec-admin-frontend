@@ -42,6 +42,11 @@ export class TrainersComponent implements OnInit {
     this.isLapOpen = !this.isLapOpen;
   }
 
+  public editTrainer(trainerId: number): void {
+    console.log(trainerId);
+    this.isLapOpen = true;
+  }
+
   public closeLap(): void {
     this.isLapOpen = false;
   }

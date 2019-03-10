@@ -13,7 +13,7 @@
   <ul>
     <ng-container *ngFor="let trainer of filteredTrainers(trainers)">
       <li>
-        <proec-trainer [trainer]="trainer"></proec-trainer>
+        <proec-trainer [trainer]="trainer" (edit)="editTrainer($event)"></proec-trainer>
       </li>
     </ng-container> 
   </ul>

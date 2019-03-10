@@ -1,4 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { TrainerDetailState } from 'src/app/states/trainer-detail-state.service';
+import { Observable } from 'rxjs';
+import { ITrainer } from 'src/app/services/trainers.service';
 
 @Component({
   selector: 'proec-trainer-edit',
@@ -7,9 +10,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TrainerEditComponent implements OnInit {
 
-  constructor() { }
+  @Input() trainerId = 0;
+  public trainer$: Observable<ITrainer>;
+
+  constructor(
+    private trainerDetailState: TrainerDetailState
+  ) { }
 
   ngOnInit() {
+    if (this.trainerId) {
+      this.trainerDetailState.fetchTrainer(this.trainerId);
+    }
+    this.trainer$ = this.trainerDetailState.$;
   }
 
 }
