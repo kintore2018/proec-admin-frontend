@@ -1,23 +1,32 @@
 @import 'common';
 
 :host {
-  display: flex;
-  align-items: center;
+  width: 100%;
 
-  & > img {
-    border-radius: 24px;
-  }
-  
-  .icon-button {
-    width: 30px;
-    border-radius: 24px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .delete {
-      fill: $secondary-color;
-    }
+    li {
+      font-weight: bold;
+      
+      & > img {
+        border-radius: 24px;
+      }
 
-    .edit {
-      fill: currentColor;
+      .icon-button {
+        width: 24px;
+        border-radius: 24px;
+    
+        .delete {
+          fill: $secondary-color;
+        }
+    
+        .edit {
+          fill: currentColor;
+        }
+      }
     }
   }
 }

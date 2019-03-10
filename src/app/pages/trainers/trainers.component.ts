@@ -11,6 +11,7 @@ import { ITrainer } from 'src/app/services/trainers.service';
 export class TrainersComponent implements OnInit {
   public trainers$: Observable<ITrainer[]>;
   public filterKey = '';
+  public isLapOpen = false;
 
   constructor(
     private trainersState: TrainersState
@@ -35,6 +36,10 @@ export class TrainersComponent implements OnInit {
         || trainer.trainerNameEn.match(regExp)
       );
     });
+  }
+
+  public createTrainer(): void {
+    this.isLapOpen = !this.isLapOpen;
   }
 
 }
