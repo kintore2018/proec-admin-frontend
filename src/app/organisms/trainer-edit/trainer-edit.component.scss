@@ -9,7 +9,7 @@ form {
     font-weight: bold;
 
     & + label {
-      margin-top: 32px;
+      margin-top: calc(#{$base-margin} * 3);
     }
   
     input, textarea {

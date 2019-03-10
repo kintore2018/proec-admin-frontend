@@ -2,7 +2,7 @@
 
 ul {
   li + li {
-    margin-top: 8px;
+    margin-top: $base-margin;
   }
 
   li {
