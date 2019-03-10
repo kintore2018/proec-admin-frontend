@@ -42,4 +42,8 @@ export class TrainersComponent implements OnInit {
     this.isLapOpen = !this.isLapOpen;
   }
 
+  public closeLap(): void {
+    this.isLapOpen = false;
+  }
+
 }

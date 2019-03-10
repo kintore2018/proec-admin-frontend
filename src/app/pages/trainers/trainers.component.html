@@ -19,5 +19,7 @@
   </ul>
 </ng-container>
 <ng-container *ngIf="isLapOpen">
-  <proec-trainer-edit></proec-trainer-edit>
+  <proec-lap (close)="closeLap()">
+    <proec-trainer-edit></proec-trainer-edit>
+  </proec-lap>
 </ng-container>

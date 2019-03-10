@@ -15,6 +15,7 @@ import { ButtonComponent } from './atoms/button/button.component';
 import { TrainerComponent } from './organisms/trainer/trainer.component';
 import { HttpApiInterceptor } from './interceptors/http-api.interceptor';
 import { NavComponent } from './molcules/nav/nav.component';
+import { LapComponent } from './molcules/lap/lap.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavComponent } from './molcules/nav/nav.component';
     InputComponent,
     ButtonComponent,
     TrainerComponent,
-    NavComponent
+    NavComponent,
+    LapComponent
   ],
   imports: [
     BrowserModule,
