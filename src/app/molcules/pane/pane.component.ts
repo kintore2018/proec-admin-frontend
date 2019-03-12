@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'proec-lap',
-  templateUrl: './lap.component.html',
-  styleUrls: ['./lap.component.scss']
+  selector: 'proec-pane',
+  templateUrl: './pane.component.html',
+  styleUrls: ['./pane.component.scss']
 })
-export class LapComponent implements OnInit {
+export class PaneComponent implements OnInit {
 
   @Output() close = new EventEmitter();
 
@@ -14,7 +14,7 @@ export class LapComponent implements OnInit {
   ngOnInit() {
   }
 
-  closeLap(): void {
+  closePane(): void {
     this.close.emit();
   }
 

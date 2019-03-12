@@ -11,7 +11,7 @@ import { ITrainer } from 'src/app/services/trainers.service';
 export class TrainersComponent implements OnInit {
   public trainers$: Observable<ITrainer[]>;
   public filterKey = '';
-  public isLapOpen = false;
+  public isPaneOpen = false;
 
   constructor(
     private trainersState: TrainersState
@@ -39,16 +39,16 @@ export class TrainersComponent implements OnInit {
   }
 
   public createTrainer(): void {
-    this.isLapOpen = !this.isLapOpen;
+    this.isPaneOpen = !this.isPaneOpen;
   }
 
   public editTrainer(trainerId: number): void {
     console.log(trainerId);
-    this.isLapOpen = true;
+    this.isPaneOpen = true;
   }
 
-  public closeLap(): void {
-    this.isLapOpen = false;
+  public closePane(): void {
+    this.isPaneOpen = false;
   }
 
 }
