@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { ITrainer } from 'src/app/services/trainers.service';
+import { TrainerDetailState } from 'src/app/states/trainer-detail-state.service';
+import { TrainerFormComponent } from 'src/app/molcules/trainer-form/trainer-form.component';
 
 @Component({
   selector: 'proec-trainer-create',
@@ -9,8 +11,12 @@ import { ITrainer } from 'src/app/services/trainers.service';
 export class TrainerCreateComponent implements OnInit {
 
   public trainer: ITrainer;
+  @Output() created = new EventEmitter();
+  @ViewChild(TrainerFormComponent) trainerForm: TrainerFormComponent;
 
-  constructor() { }
+  constructor(
+    private trainerDetailState: TrainerDetailState
+  ) { }
 
   ngOnInit() {
     this.trainer = {
@@ -26,10 +32,16 @@ export class TrainerCreateComponent implements OnInit {
       introduction: '',
       reason: '',
       salesPoint: '',
-      trainerId: 0,
+      trainerId: null,
       trainerName: '',
       trainerNameEn: '',
     };
+  }
+
+  public createTrainer(): void {
+    this.trainerDetailState.createTrainer(this.trainerForm.formValue).subscribe(() => {
+      this.created.emit();
+    });
   }
 
 }

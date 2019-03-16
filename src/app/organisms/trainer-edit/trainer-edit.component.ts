@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, Output, EventEmitter } from '@angular/core';
 import { TrainerDetailState } from 'src/app/states/trainer-detail-state.service';
 import { Observable, Subscription } from 'rxjs';
 import { ITrainer } from 'src/app/services/trainers.service';
+import { TrainerFormComponent } from 'src/app/molcules/trainer-form/trainer-form.component';
 
 @Component({
   selector: 'proec-trainer-edit',
@@ -13,6 +14,8 @@ export class TrainerEditComponent implements OnInit, OnDestroy {
   public trainer$: Observable<ITrainer>;
   private selectedTrainerId$: Observable<number>;
   private subscription = new Subscription();
+  @ViewChild(TrainerFormComponent) trainerForm: TrainerFormComponent;
+  @Output() updated = new EventEmitter();
 
   constructor(
     private trainerDetailState: TrainerDetailState,
@@ -32,8 +35,10 @@ export class TrainerEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  public save(): void {
-    console.log('update');
+  public updateTrainer(): void {
+    this.trainerDetailState.updateTrainer(this.trainerForm.formValue).subscribe(() => {
+      this.updated.emit();
+    });
   }
 
 }

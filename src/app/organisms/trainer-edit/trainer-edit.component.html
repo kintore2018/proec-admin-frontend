@@ -1,3 +1,4 @@
 <ng-container *ngIf="trainer$ | async as trainer">
   <proec-trainer-form [trainer]="trainer"></proec-trainer-form>
+  <proec-button class="is-primary" (click)="updateTrainer()">保存</proec-button>
 </ng-container>

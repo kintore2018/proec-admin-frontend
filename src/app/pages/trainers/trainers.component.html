@@ -23,10 +23,10 @@
 <ng-container *ngIf="isPaneOpen">
   <proec-pane (close)="closePane()">
     <ng-container *ngIf="isCreate">
-      <proec-trainer-create></proec-trainer-create>
+      <proec-trainer-create (created)="closePane()"></proec-trainer-create>
     </ng-container>
     <ng-container *ngIf="isEdit">
-      <proec-trainer-edit></proec-trainer-edit>
+      <proec-trainer-edit (updated)="closePane()"></proec-trainer-edit>
     </ng-container>
   </proec-pane>
 </ng-container>

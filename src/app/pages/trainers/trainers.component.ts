@@ -67,6 +67,7 @@ export class TrainersComponent implements OnInit {
 
   public closePane(): void {
     this.isPaneOpen = false;
+    this.trainersState.fetchTrainers();
   }
 
 }

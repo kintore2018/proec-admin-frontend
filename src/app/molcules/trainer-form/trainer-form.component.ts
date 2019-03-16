@@ -20,6 +20,10 @@ export class TrainerFormComponent implements OnInit {
     this.buildForm();
   }
 
+  public get formValue(): ITrainer {
+    return this.form.value;
+  }
+
   private buildForm(): void {
     this.form = this.builder.group({
       access: this.trainer.access,
