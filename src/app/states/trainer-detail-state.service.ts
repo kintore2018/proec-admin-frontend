@@ -26,7 +26,7 @@ export class TrainerDetailState extends AbstractStateService<ITrainer> {
     trainerNameEn: '',
   };
   public subject = new Subject<ITrainer>();
-  public trainerIdSubject = new Subject<number>();
+  public trainerIdSubject = new BehaviorSubject<number>(0);
 
   constructor(
     private trainersService: TrainersService
