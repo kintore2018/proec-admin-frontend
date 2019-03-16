@@ -16,6 +16,8 @@ import { TrainerComponent } from './organisms/trainer/trainer.component';
 import { HttpApiInterceptor } from './interceptors/http-api.interceptor';
 import { NavComponent } from './molcules/nav/nav.component';
 import { PaneComponent } from './molcules/pane/pane.component';
+import { TrainerFormComponent } from './molcules/trainer-form/trainer-form.component';
+import { TrainerCreateComponent } from './organisms/trainer-create/trainer-create.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PaneComponent } from './molcules/pane/pane.component';
     ButtonComponent,
     TrainerComponent,
     NavComponent,
-    PaneComponent
+    PaneComponent,
+    TrainerFormComponent,
+    TrainerCreateComponent
   ],
   imports: [
     BrowserModule,

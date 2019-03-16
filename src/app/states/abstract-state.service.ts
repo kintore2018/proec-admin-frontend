@@ -13,11 +13,11 @@ export abstract class AbstractStateService<T> {
     return this.subject.asObservable();
   }
 
-  protected setValue(value: T): void {
+  public setValue(value: T): void {
     this.subject.next(value);
   }
 
-  protected reset(): void {
+  public reset(): void {
     this.setValue(this.defaultState);
   }
 }

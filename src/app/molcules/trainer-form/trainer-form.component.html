@@ -1,0 +1,60 @@
+
+<form [formGroup]="form">
+  <label>
+    エリア
+    <input type="text" formControlName="area">
+  </label>
+  <label>
+    画像パス
+    <input type="text" formControlName="imagePath">
+  </label>
+  <label>
+    名前
+    <input type="text" formControlName="trainerName">
+  </label>
+  <label>
+    名前（英語）
+    <input type="text" formControlName="trainerNameEn">
+  </label>
+  <label>
+    自己紹介
+    <input type="text" formControlName="introduction">
+  </label>
+  <label>
+    アクセス
+    <input type="text" formControlName="access">
+  </label>
+  <label>
+    所属ジム
+    <input type="text" formControlName="belonging">
+  </label>
+  <label>
+    体験料
+    <input type="text" formControlName="trialFee">
+  </label>
+  <label>
+    入会料
+    <input type="text" formControlName="membershipFee">
+  </label>
+  <label>
+    コース料
+    <input type="text" formControlName="fee">
+  </label>
+  <label>
+    なぜトレーナーを目指したのか
+    <textarea formControlName="reason"></textarea>
+  </label>
+  <label>
+    得意分野
+    <textarea formControlName="salesPoint"></textarea>
+  </label>
+  <label>
+    趣味
+    <input type="text" formControlName="hobby">
+  </label>
+  <label>
+    最後に一言
+    <textarea formControlName="comment"></textarea>
+  </label>
+  <proec-button class="is-primary" (click)="save()">保存</proec-button>
+</form>

@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { AbstractApiService } from './abstract-api.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-
 
 const API_FETCHTRAINERS = '/api/admin/trainer/list';
-const API_FETCHTRAINER = '/api/admin/trainer/';
+const API_FETCHTRAINER = '/api/admin/trainer/details';
 const API_UPDATETRAINER = '/api/admin/trainer/update';
 const API_CREATETRAINER = '/api/admin/trainer/create';
 // const API_DELETETRAINER = '/api/admin/trainer/delete';
@@ -48,8 +46,8 @@ export class TrainersService extends AbstractApiService {
     return this.fetch(API_FETCHTRAINERS);
   }
 
-  fetchTrainer(id: number): Observable<ITrainer> {
-    return this.fetch(API_FETCHTRAINER);
+  fetchTrainer(trainerId: number): Observable<ITrainer> {
+    return this.fetch(`${API_FETCHTRAINER}/${trainerId}`);
   }
 
   updateTrainer(param: ITrainer): Observable<ITrainer> {

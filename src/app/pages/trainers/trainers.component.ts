@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { TrainersState } from 'src/app/states/trainers-state.service';
 import { Observable } from 'rxjs';
 import { ITrainer } from 'src/app/services/trainers.service';
+import { TrainerDetailState } from 'src/app/states/trainer-detail-state.service';
+
+const CODE_PANETYPE = {
+  NEW: 'NEW',
+  EDIT: 'EDIT'
+};
 
 @Component({
   selector: 'proec-trainers',
@@ -12,14 +18,24 @@ export class TrainersComponent implements OnInit {
   public trainers$: Observable<ITrainer[]>;
   public filterKey = '';
   public isPaneOpen = false;
+  private paneType: string;
 
   constructor(
-    private trainersState: TrainersState
+    private trainersState: TrainersState,
+    private trainerDetailState: TrainerDetailState
   ) { }
 
   ngOnInit() {
     this.trainersState.fetchTrainers();
     this.trainers$ = this.trainersState.$;
+  }
+
+  public get isCreate(): boolean {
+    return this.paneType === CODE_PANETYPE.NEW;
+  }
+
+  public get isEdit(): boolean {
+    return this.paneType === CODE_PANETYPE.EDIT;
   }
 
   public changeFilterKey(e: Event): void {
@@ -39,12 +55,14 @@ export class TrainersComponent implements OnInit {
   }
 
   public createTrainer(): void {
-    this.isPaneOpen = !this.isPaneOpen;
+    this.isPaneOpen = true;
+    this.paneType = CODE_PANETYPE.NEW;
   }
 
   public editTrainer(trainerId: number): void {
-    console.log(trainerId);
     this.isPaneOpen = true;
+    this.paneType = CODE_PANETYPE.EDIT;
+    this.trainerDetailState.setSelectedTrainerId(trainerId);
   }
 
   public closePane(): void {

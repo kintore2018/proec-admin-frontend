@@ -22,6 +22,11 @@
 </section>
 <ng-container *ngIf="isPaneOpen">
   <proec-pane (close)="closePane()">
-    <proec-trainer-edit></proec-trainer-edit>
+    <ng-container *ngIf="isCreate">
+      <proec-trainer-create></proec-trainer-create>
+    </ng-container>
+    <ng-container *ngIf="isEdit">
+      <proec-trainer-edit></proec-trainer-edit>
+    </ng-container>
   </proec-pane>
 </ng-container>
