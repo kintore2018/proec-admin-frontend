@@ -44,8 +44,8 @@ export class TrainersComponent implements OnInit {
   }
 
   public filteredTrainers(trainers: ITrainer[]): ITrainer[] {
+    const regExp = new RegExp(this.filterKey);
     return trainers.filter(trainer => {
-      const regExp = new RegExp(this.filterKey);
       return (
         trainer.area.match(regExp)
         || trainer.trainerName.match(regExp)
