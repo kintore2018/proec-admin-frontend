@@ -4,6 +4,7 @@ main {
   position: relative;
   left: 50px;
   width: calc(100% - 100px);
+  height: calc(100% - (#{$base-padding} * 3 * 2));
   padding: calc(#{$base-padding} * 3);
   background-color: #F6F6F6;
 }
