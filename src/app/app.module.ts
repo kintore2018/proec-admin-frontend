@@ -18,6 +18,7 @@ import { NavComponent } from './molcules/nav/nav.component';
 import { PaneComponent } from './molcules/pane/pane.component';
 import { TrainerFormComponent } from './molcules/trainer-form/trainer-form.component';
 import { TrainerCreateComponent } from './organisms/trainer-create/trainer-create.component';
+import { TrainersHeaderComponent } from './molcules/trainers-header/trainers-header.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TrainerCreateComponent } from './organisms/trainer-create/trainer-creat
     NavComponent,
     PaneComponent,
     TrainerFormComponent,
-    TrainerCreateComponent
+    TrainerCreateComponent,
+    TrainersHeaderComponent
   ],
   imports: [
     BrowserModule,

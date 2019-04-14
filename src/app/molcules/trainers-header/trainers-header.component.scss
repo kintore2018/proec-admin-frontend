@@ -1,0 +1,19 @@
+@import 'common';
+
+:host {
+  width: 100%;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: calc(#{$base-margin} *3);
+    margin-bottom: $base-margin;
+
+    li {
+      font-weight: bold;
+      color: #C9CDDC;
+    }
+  }
+}
+

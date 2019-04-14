@@ -12,6 +12,7 @@
   </div>
   <ng-container *ngIf="trainers$ | async as trainers">
     <ul>
+      <proec-trainers-header></proec-trainers-header>
       <ng-container *ngFor="let trainer of filteredTrainers(trainers)">
         <li>
           <proec-trainer [trainer]="trainer" (edit)="editTrainer($event)"></proec-trainer>
