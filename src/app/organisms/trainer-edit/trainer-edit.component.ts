@@ -14,7 +14,7 @@ export class TrainerEditComponent implements OnInit, OnDestroy {
   public trainer$: Observable<ITrainer>;
   private selectedTrainerId$: Observable<number>;
   private subscription = new Subscription();
-  @ViewChild(TrainerFormComponent) trainerForm: TrainerFormComponent;
+  @ViewChild(TrainerFormComponent, { static: false }) trainerForm: TrainerFormComponent;
   @Output() updated = new EventEmitter();
 
   constructor(

@@ -12,7 +12,7 @@ export class TrainerCreateComponent implements OnInit {
 
   public trainer: ITrainer;
   @Output() created = new EventEmitter();
-  @ViewChild(TrainerFormComponent) trainerForm: TrainerFormComponent;
+  @ViewChild(TrainerFormComponent, { static: true }) trainerForm: TrainerFormComponent;
 
   constructor(
     private trainerDetailState: TrainerDetailState
