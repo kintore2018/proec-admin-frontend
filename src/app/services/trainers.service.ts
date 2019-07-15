@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 
 const API_FETCHTRAINERS = '/api/admin/trainer/list';
 const API_FETCHTRAINER = '/api/admin/trainer/details';
-const API_UPDATETRAINER = '/api/admin/trainer/update';
-const API_CREATETRAINER = '/api/admin/trainer/create';
+const API_UPDATETRAINER = '/api/admin/trainer/save';
+const API_CREATETRAINER = '/api/admin/trainer/save';
 // const API_DELETETRAINER = '/api/admin/trainer/delete';
 
 export interface ITrainer {
